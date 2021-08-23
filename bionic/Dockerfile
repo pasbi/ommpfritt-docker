@@ -11,6 +11,7 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y \
               build-essential \
+              fuse \
               g++-9 \
               gcc-9 \
               gpg \
