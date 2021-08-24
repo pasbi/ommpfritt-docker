@@ -4,10 +4,13 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV QT_PREFIX="/opt/qt515"
 ENV LD_LIBRARY_PATH="/usr/local/lib/:/usr/local/lib/x86_64-linux-gnu/:/opt/qt515/lib/"
 
+# more recent git (from ppa:git-core/ppa) is required because of https://github.com/actions/checkout/issues/335.
+
 RUN apt-get update \
     && apt-get install -y software-properties-common \
     && add-apt-repository ppa:ubuntu-toolchain-r/test \
     && add-apt-repository ppa:beineri/opt-qt-5.15.2-bionic \
+    && add-apt-repository ppa:git-core/ppa \
     && apt-get update \
     && apt-get install -y \
               build-essential \
