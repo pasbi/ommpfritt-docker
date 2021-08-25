@@ -92,3 +92,9 @@ RUN git clone https://gitlab.freedesktop.org/poppler/poppler; \
           ; \
     cmake --build build-poppler --target install --config Release -j4; \
     updatedb
+
+RUN git clone https://github.com/fmtlib/fmt.git; \
+    cd fmt; git checkout 8.0.1; cd ..; \
+    cmake -S fmt -B build-fmtlib -GNinja -DCMAKE_BUILD_TYPE=Release; \
+    cmake --build build-fmtlib --target install --config Release -j4; \
+    updatedb
