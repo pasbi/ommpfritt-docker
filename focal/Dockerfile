@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
       git \
       libboost-all-dev \
       libcairo2-dev \
+      libclang-dev \
       libdouble-conversion-dev \
       libffi-dev \
       libgl-dev \
@@ -36,3 +37,8 @@ RUN /install-lib2geom.sh
 
 COPY scripts/install-fmt.sh /
 RUN /install-fmt.sh
+
+COPY scripts/install-qt6.sh /
+RUN /install-qt6.sh
+
+RUN rm -rf /install-*.sh

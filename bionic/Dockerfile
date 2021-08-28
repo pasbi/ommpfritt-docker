@@ -62,6 +62,9 @@ RUN /install-lib2geom.sh
 COPY scripts/install-fmt.sh /
 RUN /install-fmt.sh
 
+COPY scripts/install-qt6.sh /
+RUN /install-qt6.sh
+
 COPY scripts/install-poppler.sh /
 RUN /install-poppler.sh
 
