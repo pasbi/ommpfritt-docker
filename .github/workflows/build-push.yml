@@ -11,7 +11,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: docker/build-push-action@v2
         with:
-          context: bionic
+          context: .
+          file: bionic/Dockerfile
           push: true
           tags: pasbi/ommpfritt-bionic:latest
   focal:
@@ -24,6 +25,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: docker/build-push-action@v2
         with:
-          context: focal
+          context: .
+          file: focal/Dockerfile
           push: true
           tags: pasbi/ommpfritt-focal:latest
