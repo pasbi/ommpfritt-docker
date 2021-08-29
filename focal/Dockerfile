@@ -16,10 +16,13 @@ RUN apt-get update && apt-get install -y \
       libffi-dev \
       libgl-dev \
       libgsl-dev \
+      libjpeg-dev \
       libkf5itemmodels-dev \
-      libpoppler-qt5-dev \
+      libnss3-dev \
+      libopenjp2-7-dev \
       libqt5svg5-dev \
       libssl-dev \
+      libtiff-dev \
       imagemagick \
       ninja-build \
       python3-dev \
@@ -40,5 +43,8 @@ RUN /install-fmt.sh
 
 COPY scripts/install-qt6.sh /
 RUN /install-qt6.sh
+
+COPY scripts/install-poppler.sh /
+RUN /install-poppler.sh
 
 RUN rm -rf /install-*.sh
