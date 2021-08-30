@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y \
       libssl-dev \
       libtiff-dev \
       imagemagick \
+      mlocate \
       ninja-build \
       python3-dev \
       python3-numpy \
@@ -46,5 +47,7 @@ RUN /install-qt6.sh
 
 COPY scripts/install-poppler.sh /
 RUN /install-poppler.sh
+
+RUN ldconfig
 
 RUN rm -rf /install-*.sh

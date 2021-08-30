@@ -30,7 +30,7 @@ RUN apt-get update \
               libnss3-dev \
               libopenjp2-7-dev \
               libssl-dev \
-              locate \
+              mlocate \
               imagemagick \
               ninja-build \
               python3-dev \
