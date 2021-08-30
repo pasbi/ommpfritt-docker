@@ -21,6 +21,7 @@ RUN apt-get update \
               git \
               libboost-all-dev \
               libcairo2-dev \
+              libclang-dev \
               libdouble-conversion-dev \
               libffi-dev \
               libfuse2 \
@@ -30,7 +31,7 @@ RUN apt-get update \
               libnss3-dev \
               libopenjp2-7-dev \
               libssl-dev \
-              mlocate \
+              libtiff-dev \
               imagemagick \
               ninja-build \
               python3-dev \
@@ -67,5 +68,7 @@ RUN /install-qt6.sh
 
 COPY scripts/install-poppler.sh /
 RUN /install-poppler.sh
+
+RUN ldconfig
 
 RUN rm -rf /install-*.sh
