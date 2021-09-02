@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
               libboost-all-dev \
               libcairo2-dev \
               libclang-dev \
+              libclang-9-dev \
               libdouble-conversion-dev \
               libffi-dev \
               libgl-dev \
@@ -23,6 +24,7 @@ RUN apt-get update && apt-get install -y \
               libopenjp2-7-dev \
               libqt5svg5-dev \
               libssl-dev \
+              libstdc++-10-dev \
               libtiff-dev \
               imagemagick \
               ninja-build \
