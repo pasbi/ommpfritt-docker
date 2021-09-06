@@ -7,6 +7,8 @@ ENV LD_LIBRARY_PATH="/usr/local/lib/:/usr/local/lib/x86_64-linux-gnu/:/opt/qt515
 RUN apt-get update \
     && apt-get install -y software-properties-common wget \
     && add-apt-repository ppa:beineri/opt-qt-5.15.2-focal \
+    && wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - > /usr/share/keyrings/kitware-archive-keyring.gpg \
+    && echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ bionic main' > /etc/apt/sources.list.d/kitware.list \
     && apt-get update \
     && apt-get install -y \
       build-essential \
