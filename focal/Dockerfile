@@ -15,7 +15,6 @@ RUN apt-get update && apt-get install -y \
       libffi-dev \
       libgl-dev \
       libgsl-dev \
-      libkf5itemmodels-dev \
       libpoppler-qt5-dev \
       libqt5svg5-dev \
       libssl-dev \

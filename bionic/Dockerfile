@@ -51,9 +51,6 @@ RUN apt-get update \
 COPY scripts/install-cmake-extra-modules.sh /
 RUN /install-cmake-extra-modules.sh
 
-COPY scripts/install-kitemmodels.sh /
-RUN /install-kitemmodels.sh
-
 COPY scripts/install-lib2geom.sh /
 RUN /install-lib2geom.sh
 
