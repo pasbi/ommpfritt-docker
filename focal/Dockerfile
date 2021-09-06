@@ -1,8 +1,14 @@
 FROM ubuntu:focal
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV QT_PREFIX="/opt/qt515"
+ENV LD_LIBRARY_PATH="/usr/local/lib/:/usr/local/lib/x86_64-linux-gnu/:/opt/qt515/lib/"
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update \
+    && apt-get install -y software-properties-common wget \
+    && add-apt-repository ppa:beineri/opt-qt-5.15.2-focal \
+    && apt-get update \
+    && apt-get install -y \
       build-essential \
       clang \
       clazy \
@@ -16,17 +22,16 @@ RUN apt-get update && apt-get install -y \
       libgl-dev \
       libgsl-dev \
       libpoppler-qt5-dev \
-      libqt5svg5-dev \
       libssl-dev \
       imagemagick \
       ninja-build \
       python3-dev \
       python3-numpy \
-      qt5-default \
-      qtbase5-dev \
-      qtchooser \
-      qttools5-dev-tools \
-      qttools5-dev \
+      qt515base \
+      qt515svg \
+      qt515tools \
+      qt515translations \
+      qt515x11extras \
       zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
