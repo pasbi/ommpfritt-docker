@@ -12,21 +12,31 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y \
       build-essential \
-      clang \
+      clang-11 \
       clang-tidy \
-      clazy \
+      clang-tools-11 \
       cmake \
       g++ \
       git \
+      imagemagick \
       libboost-all-dev \
       libcairo2-dev \
+      libclang-11-dev \
+      libclang-common-11-dev \
+      libclang-cpp11 \
+      libclang-cpp11-dev \
+      libclang1-11 \
       libdouble-conversion-dev \
       libffi-dev \
       libgl-dev \
       libgsl-dev \
+      libllvm11 \
       libpoppler-qt5-dev \
       libssl-dev \
-      imagemagick \
+      llvm-11 \
+      llvm-11-dev \
+      llvm-11-runtime \
+      llvm-11-tools \
       ninja-build \
       python3-dev \
       python3-numpy \
@@ -39,7 +49,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY scripts/install-lib2geom.sh /
-RUN /install-lib2geom.sh
+RUN /install-lib2geom.sh && rm /install-lib2geom.sh
 
 COPY scripts/install-fmt.sh /
-RUN /install-fmt.sh
+RUN /install-fmt.sh && rm /install-fmt.sh
+
+COPY scripts/install-clazy.sh /
+RUN /install-clazy.sh && rm /install-clazy.sh
