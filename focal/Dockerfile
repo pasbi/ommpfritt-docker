@@ -45,6 +45,7 @@ RUN apt-get update \
       qt515tools \
       qt515translations \
       qt515x11extras \
+      xvfb \
       zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
