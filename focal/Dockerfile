@@ -16,7 +16,7 @@ RUN apt-get update \
       clang-tidy \
       clang-tools-11 \
       cmake \
-      g++ \
+      g++-10 \
       git \
       imagemagick \
       libboost-all-dev \
@@ -47,7 +47,9 @@ RUN apt-get update \
       qt515x11extras \
       xvfb \
       zlib1g-dev \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 60 \
+                           --slave /usr/bin/g++ g++ /usr/bin/g++-10
 
 COPY scripts/install-lib2geom.sh /
 RUN /install-lib2geom.sh && rm /install-lib2geom.sh

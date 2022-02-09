@@ -18,8 +18,8 @@ RUN apt-get update \
       build-essential \
       cmake \
       fuse \
-      g++-9 \
-      gcc-9 \
+      g++-10 \
+      gcc-10 \
       gpg \
       git \
       libboost-all-dev \
@@ -45,8 +45,8 @@ RUN apt-get update \
       qt515x11extras \
       zlib1g-dev \
     && rm -rf /var/lib/apt/lists/* \
-    && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 60 \
-                           --slave /usr/bin/g++ g++ /usr/bin/g++-9
+    && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 60 \
+                           --slave /usr/bin/g++ g++ /usr/bin/g++-10
 
 COPY scripts/install-cmake-extra-modules.sh /
 RUN /install-cmake-extra-modules.sh
